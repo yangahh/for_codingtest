@@ -7,7 +7,7 @@
 
 data = input()
 
-x = int(ord(data[0])) - ord('a') + 1   #
+x = int(ord(data[0])) - ord('a') + 1
 y = int(data[1])
 
 ## ord(문자) : 문자 -> 아스키코드(숫자)로 반환
