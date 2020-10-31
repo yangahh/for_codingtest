@@ -1,5 +1,5 @@
 # 문제) 경쟁적 전염 (https://www.acmicpc.net/problem/18405)
-# 
+
 
 from collections import deque
 
