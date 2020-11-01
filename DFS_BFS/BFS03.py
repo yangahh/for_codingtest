@@ -1,4 +1,4 @@
-# 문제) 경쟁적 전염 (https://www.acmicpc.net/problem/18405)
+# 문제) 경쟁적 전염 (https://www.acmicpc.net/problem/18405) 다시풀기
 
 
 from collections import deque
@@ -11,7 +11,7 @@ def bfs(gragh, a, b, k):
     # 방향 벡터(상, 하, 좌, 우) 설정
     da = [-1, 1, 0, 0]
     db = [0, 0, -1, 1]
-    
+
     second = 0
     
     while queue:
