@@ -3,13 +3,14 @@
 # 출력 : X로부터 출발하여 도달할 수 있는 도시 중에서, 최단 거리가 K인 모든 도시의 번호를 한 줄에 하나씩 오름차순으로 출력한다.
 #       이 때 도달할 수 있는 도시 중에서, 최단 거리가 K인 도시가 하나도 존재하지 않으면 -1을 출력한다.
 from collections import deque
+import sys
 
-n, m, k, x = map(int, input().split())
+n, m, k, x = map(int, sys.stdin.readline().rstrip().split())
 # 도로 정보를 저장할 2차원 배열. (각 행 번호 == 도시 번호, 값 == 연결된 도시 번호)
 gragh = [[] for _ in range(n+1)] 
 
 for _ in range(m):
-    a, b = map(int, input().split())
+    a, b = map(int, sys.stdin.readline().rstrip().split())
     gragh[a].append(b) 
 
 # 방문처리
@@ -38,4 +39,3 @@ for i in range(1, n+1):
         print(i)
 if k not in distance:
     print(-1)
-
