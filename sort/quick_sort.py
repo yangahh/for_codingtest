@@ -11,22 +11,13 @@ def quick_sort(data, start, end):
     while left <= right:
 
         # 왼쪽에서부터 피벗보다 큰 데이터를 찾을 때 까지 반복
-        while data[pivot] >= data[left] and left <= end:
+        while data[left] <= data[pivot] and left <= end:
             left += 1
         
         # 오른쪽에서 부터 피벗보다 작은 데이터를 찾을 때 까지 반복
-        while data[pivot] <= data[right] and right > start:
+        while data[right] >= data[pivot] and right > start:
             right -= 1
         
-        
-        # if left <= right:
-        #     data[left], data[right] = data[right], data[left]
-        #     print(data)
-        # else:
-        #     data[right], data[pivot] = data[pivot], data[right]
-        #     print("else")
-        #     print(data)
-
         if left > right:
             data[right], data[pivot] = data[pivot], data[right]
         else:
