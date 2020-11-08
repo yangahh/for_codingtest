@@ -4,9 +4,9 @@ data = [5, 7, 9, 0, 3, 1, 6, 2, 4, 8]
 def quick_sort(data, start, end):
     if start >= end: # 원소가 1개인 경우 함수 종료
         return
-    pivot = start   # 0, 7
-    left = start + 1  # 1, 5
-    right = end # 9, 8
+    pivot = start
+    left = start + 1
+    right = end
 
     while left <= right:
 
