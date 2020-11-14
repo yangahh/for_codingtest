@@ -8,24 +8,30 @@ requests = list(map(int, sys.stdin.readline().rstrip().split()))
 
 
 parts = sorted(parts)
-print(parts)
-start = 0
-end = n - 1
-
-results = ["empty"] * m
 
 
-for i in range(m):
-    # 이진 탐색
+def bin_search(array, target, start, end):
+
     while start <= end:
         mid = (start + end) // 2
-        
-        if parts[mid] == requests[i]:
-            print("yes", end=" ")
-            break
-        elif parts[mid] >= requests[i]:
+
+        if array[mid] == target:
+            return True
+        elif array[mid] > target :
             end = mid - 1
         else:
             start = mid + 1
-    print("no", end=" ")
+    
+    return False
+
+
+for request in requests:
+    # 이진 탐색
+    result = bin_search(parts, request, 0, n - 1)
+
+    if result:
+        print("yes", end=" ")
+    else:
+        print("no", end=" ")
+   
 
