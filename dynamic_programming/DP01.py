@@ -14,6 +14,7 @@
 n = int(input())
 array = list(map(int, input().split()))
 
+'''
 # DP테이블 초기화 (n의 범위가 최대 100이여서 100까지)
 d = [0] * 100
 
@@ -24,4 +25,26 @@ d[1] = max(array[0], array[1])
 for i in range(2, n):
     d[i] = max(d[i-1], d[i-2] + array[i])
 
-print(d[n-1])
+print(d[n - 1])
+
+'''
+# 탑다운 형식
+dp = [0] * 100
+
+def topdown(x):
+    # 종료조건
+    if x == 0:
+        return array[0]
+    if x == 1:
+        return max(array[0], array[1])
+
+    # 이미 계산 된 문제라면 그대로 함수 호출
+    if dp[x] != 0:
+        return dp[x]
+    
+    # 아직 계산되지 않은 문제라면 점화식에 따라 결과 반환
+    dp[x] = max(d[x - 1], d[x - 2] + array[x])
+    return dp[x]
+
+
+print(topdown(n))
